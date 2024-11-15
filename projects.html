@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projelerim</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Anasayfa</a>
+            <a href="about.html">Hakkımda</a>
+            <a href="projects.html">Projelerim</a>
+        </nav>
+    </header>
+    <main>
+
+        <h1>Projelerim</h1>
+
+        <label for="filterBy">Kategori Seçin:</label>
+
+        <select id="filterBy">
+            <option value="all">Tüm Projeler</option>
+            <option value="sentiment">Duygu Analizi</option>
+            <option value="freeCategory">Serbest Kategori</option>
+        </select>
+
+        <section id="sentiment" class="project-category">
+            <h2>Duygu Analizi</h2>
+            <div class="project" data-category="sentiment">
+                <img src="images/1723330714800.jpg" alt="Proje 1">
+                <h3>NLP Projesi</h3>
+                <h5>Duygu Analizi</h5>
+                <p>Bu projede, metinlerdeki duygusal tonları analiz etmek için doğal dil işleme (NLP) tekniklerini kullandım.</p>
+            </div>
+        </section>
+
+        <section id="freeCategory" class="project-category">
+            <h2>Serbest Kategori</h2>
+            <div class="project" data-category="freeCategory">
+                <img src="images/1723330714800.jpg" alt="Proje 2">
+                <h3>Serbest Kategori Projesi</h3>
+                <h5>Serbest Kategori</h5>
+                <p>Bu projede, metinlerin serbest kategorilerde sınıflandırılmasını sağlamak için NLP ve makine öğrenimi yöntemlerini kullandım.</p>
+            </div>
+        </section>
+
+    </main>
+
+    <script>
+
+        document.getElementById("filterBy").addEventListener("change", function () {
+            const filterValue = this.value;
+            const allProjects = document.querySelectorAll(".project-category");
+
+            allProjects.forEach(category => {
+                category.style.display = "none";
+            });
+
+            if (filterValue === "all") {
+                allProjects.forEach(category => {
+                    category.style.display = "block";
+                });
+            } else {
+                const selectedCategory = document.getElementById(filterValue);
+                if (selectedCategory) {
+                    selectedCategory.style.display = "block";
+                }
+            }
+        });
+
+    </script>
+</body>
+</html>

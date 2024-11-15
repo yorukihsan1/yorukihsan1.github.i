@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hakkımda</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <a href="index.html">Anasayfa</a>
+            <a href="about.html">Hakkımda</a>
+            <a href="projects.html">Projelerim</a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Hakkımda</h1>
+        <div class="image-container">
+            <img src="images/ihsan.jpg" alt="ihsan yörük">
+        </div>
+        <p>
+            Recep Tayyip Erdoğan Üniversitesi Bilgisayar Mühendisliği Bölümü 3. sınıf öğrencisiyim.
+            <span id="moreText" style="display:none;">
+                Teknolojiye ve yazılım geliştirmeye olan ilgim doğrultusunda kendimi sürekli geliştirmeyi hedefliyorum. Web tasarımı ve programlama konularında bilgi sahibiyim ve güncel teknolojilere adapte olmayı önemsiyorum.
+                Boş zamanlarımda yeni teknolojiler keşfetmeyi, kitap okumayı ve kişisel projeler üzerinde çalışmayı seviyorum.
+            </span>
+        </p>
+
+        <button id="toggleButton">Daha Fazla Gör</button>
+    </main>
+
+    <script>
+        document.getElementById("toggleButton").addEventListener("click", function () {
+            const moreText = document.getElementById("moreText");
+            const button = document.getElementById("toggleButton");
+
+            if (moreText.style.display === "none") {
+                moreText.style.display = "inline";
+                button.textContent = "Daha Az Gör";
+            } else {
+                moreText.style.display = "none";
+                button.textContent = "Daha Fazla Gör";
+            }
+        });
+    </script>
+
+</body>
+</html>
